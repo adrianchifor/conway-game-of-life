@@ -91,7 +91,6 @@ def main():
     screen.blit(background, (0, 0)) 
     pygame.display.flip()
 
-
     while isActive:
         clock.tick(TARGET_FPS)
         newgrid = Grid()
@@ -126,8 +125,7 @@ def main():
             newgrid = grid
             
         debug.update(active = numActive)
-        
- 
+
         actionDown = False
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
