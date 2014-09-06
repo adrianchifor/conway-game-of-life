@@ -7,7 +7,7 @@ WIN_HEIGHT = 480
 
 #Update every 2ms
 REFRESH = 2
-TARGET_FPS = 100
+TARGET_FPS = 60
 
 #Each cell with one or no neighbours dies because of loneliness. 
 #Each cell with four or more neighbours dies because of overpopulation. 
@@ -34,6 +34,7 @@ class Grid():
             if self.getCell(x-1,y+1): count += 1
             if self.getCell(x,y+1): count += 1
             if self.getCell(x+1,y+1): count += 1
+            
         except:
             return 0
 
@@ -82,8 +83,8 @@ def main():
     debug = debugText(screen, clock)  
 
     #Create the orginal grid pattern randomly
-    for x in xrange(0, WIN_WIDTH/PIXEL_SIZE):
-        for y in xrange(0, WIN_HEIGHT/PIXEL_SIZE):
+    for x in xrange(0, WIN_WIDTH / PIXEL_SIZE):
+        for y in xrange(0, WIN_HEIGHT / PIXEL_SIZE):
             if random.randint(0, 10) == 1:
                 grid.setCell(x, y, True)
                 drawSquare(background, x, y)
