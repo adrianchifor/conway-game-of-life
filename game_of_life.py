@@ -9,10 +9,6 @@ WIN_HEIGHT = 480
 REFRESH = 2
 TARGET_FPS = 60
 
-#Each cell with one or no neighbours dies because of loneliness. 
-#Each cell with four or more neighbours dies because of overpopulation. 
-#Each cell with two or three neighbours survives. 
-
 class Grid():
     def __init__(self, *args, **kwargs):
         self.grid = [[False for i in range(WIN_HEIGHT / PIXEL_SIZE)] for i in range(WIN_WIDTH / PIXEL_SIZE)]
@@ -136,8 +132,11 @@ def main():
                 actionDown = True
 
                 while actionDown:
-                    newgrid.setCell(pygame.mouse.get_pos()[0] / PIXEL_SIZE, pygame.mouse.get_pos()[1] / PIXEL_SIZE, True)
-                    drawSquare(background, pygame.mouse.get_pos()[0] / PIXEL_SIZE, pygame.mouse.get_pos()[1] / PIXEL_SIZE)
+                    newgrid.setCell(pygame.mouse.get_pos()[0] / PIXEL_SIZE, 
+                    	pygame.mouse.get_pos()[1] / PIXEL_SIZE, True)
+                    	
+                    drawSquare(background, pygame.mouse.get_pos()[0] / PIXEL_SIZE, 
+                    	pygame.mouse.get_pos()[1] / PIXEL_SIZE)
                     
                     for event in pygame.event.get():
                         if event.type == pygame.MOUSEBUTTONUP:
@@ -145,7 +144,6 @@ def main():
                     
                     screen.blit(background, (0, 0)) 
                     pygame.display.flip()
-
 
         #Draws the new grid
         grid = newgrid       
