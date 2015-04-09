@@ -1,4 +1,4 @@
-## Conway's Game of Life in Python using pygame
+# Conway's Game of Life in Python using pygame
 
 Each cell with one or no neighbours dies because of loneliness. Each cell with four or more neighbours dies because of overpopulation. Each cell with two or three neighbours survives.
 
